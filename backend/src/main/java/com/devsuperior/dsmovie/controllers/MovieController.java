@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,6 +23,11 @@ public class MovieController {
     @GetMapping
     public ResponseEntity<Page<MovieDTO>> getAll(Pageable pageable) {
         return ResponseEntity.ok(_service.findAll(pageable));
+    }
+
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<MovieDTO> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(_service.findById(id));
     }
 
 }

@@ -22,4 +22,9 @@ public class MovieService {
         var result = _repository.findAll(pageable);
         return result.map(MovieDTO::new);
     }
+
+    public MovieDTO findById(Long id) {
+        var result = _repository.findById(id).get();
+        return new MovieDTO(result);
+    }
 }
