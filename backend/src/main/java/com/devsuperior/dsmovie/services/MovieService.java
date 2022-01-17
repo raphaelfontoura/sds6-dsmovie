@@ -24,7 +24,7 @@ public class MovieService {
     }
 
     public MovieDTO findById(Long id) {
-        var result = _repository.findById(id).get();
+        var result = _repository.findById(id).orElseThrow();
         return new MovieDTO(result);
     }
 }

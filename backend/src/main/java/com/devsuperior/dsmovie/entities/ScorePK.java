@@ -1,13 +1,15 @@
 package com.devsuperior.dsmovie.entities;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter @Setter
 @Embeddable
 public class ScorePK implements Serializable {
     @ManyToOne

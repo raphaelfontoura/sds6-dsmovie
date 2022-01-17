@@ -1,10 +1,12 @@
 package com.devsuperior.dsmovie.entities;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter @Setter
 @Entity
 @Table(name = "tb_user")
 public class User {

@@ -14,9 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ScoreService {
 
-    private MovieRepository _movieRepository;
-    private UserRepository _userRepository;
-    private ScoreRepository _repository;
+    private final MovieRepository _movieRepository;
+    private final UserRepository _userRepository;
+    private final ScoreRepository _repository;
 
     public ScoreService(MovieRepository movieRepository,
                         UserRepository userRepository,
@@ -40,7 +40,7 @@ public class ScoreService {
         score.setUser(user);
         score.setValue(dto.getScore());
 
-        score = _repository.saveAndFlush(score);
+        _repository.saveAndFlush(score);
 
         double sum = 0.0;
         for (Score sc :
