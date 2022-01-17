@@ -28,8 +28,8 @@ const Listing = () => {
         <div className="row">
           {movieResponse?.content.map(
             movie => (
-              <div className="col-sm-6 col-lg-4 col-xl-3 mb-4">
-                <MovieCard movie={movie} key={movie.id} />
+              <div className="col-sm-6 col-lg-4 col-xl-3 mb-4" key={movie.id}>
+                <MovieCard movie={movie} />
               </div>
             )
           )}
