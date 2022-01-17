@@ -38,7 +38,7 @@ const FormCard = ({ movieId }: Props) => {
       data: {
         email: email,
         movieId: movieId,
-        score: score as number
+        score: score
       }
     }
     axios(config).then(
